@@ -3,13 +3,12 @@ import { loadRespecWithConfiguration } from "https://logius-standaarden.github.i
 
 loadRespecWithConfiguration({
   pubDomain: "api",
-  shortName: "mod-template",
+  shortName: "mod-pagination",
   specType: "HR",
   specStatus: "WV",
-  publishDate: "2024-03-07",
-  publishVersion: "1.0.2",
-  previousPublishDate: "2023-05-23",
-  previousPublishVersion: "1.0.1",
+  publishDate: "2026-06-01",
+  publishVersion: "0.0.0",
+  previousPublishVersion: [],
   editors: [{
     name: "Logius Standaarden",
     company: "Logius",
@@ -20,6 +19,6 @@ loadRespecWithConfiguration({
     company: "Logius",
     companyURL: "https://www.logius.nl",
   },],
-  github: "https://github.com/Logius-standaarden/API-mod-template/",
+  github: "https://github.com/Logius-standaarden/API-pagination/",
   postProcess: [processRuleBlocks],
 });
