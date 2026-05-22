@@ -19,6 +19,6 @@ loadRespecWithConfiguration({
     company: "Logius",
     companyURL: "https://www.logius.nl",
   },],
-  github: "https://github.com/Logius-standaarden/API-pagination/",
+  github: "https://github.com/Logius-standaarden/API-mod-pagination",
   postProcess: [processRuleBlocks],
 });
