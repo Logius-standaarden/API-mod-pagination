@@ -7,17 +7,30 @@
 <h3>Rules</h3>
 
 <div class="rule" id="/pagination/format" data-type="technical">
-    <p class="rulelab">Use one of the two allowed pagination formats</p>
+    <p class="rulelab">Use standard pagination format</p>
     <dl>
         <dt>Statement</dt>
         <dd>
-            <p>A paginated endpoint MUST use either page-number pagination or cursor pagination, not both.</p>
-            <p>Endpoints with page-number pagination MUST support <code>page</code> and <code>pageSize</code>. Endpoints with cursor pagination MUST support <code>cursor</code> and <code>limit</code>.</p>
-            <p>An endpoint MAY define alternatives such as, but not limited to, <code>size</code> or <code>offset</code> for backwards compatibility.</p>
+            <p>A paginated request MUST use one (and only one) pagination method from the following list:
+            <ul>
+                <li>Page-number pagination using query keys <code>page</code> and <code>pageSize</code>:
+                    <ul>
+                        <li><code>page</code>: requested page number (1-based)
+                        <li><code>pageSize</code>: maximum number of items to return per page
+                    </ul>
+                </li>
+                <li>Cursor pagination using query keys <code>cursor</code> and <code>limit</code>:
+                    <ul>
+                        <li><code>cursor</code>: opaque pointer to current position in dataset
+                        <li><code>limit</code>: maximum number of items to return per page
+                    </ul>
+                </li>
+            </ul>
+            <p class="note">An endpoint MAY define additional aliases such as, but not limited to, <code>size</code> or <code>offset</code> for backwards compatibility.
         </dd>
         <dt>Rationale</dt>
         <dd>
-            <p>The two defined formats cover the main usage patterns. Limiting the possible formats makes responses more predictable and endorses reuse.</p>
+            <p>The defined formats cover the main usage patterns of pagination with the most commonly used names for query keys.
         </dd>
         <dt>How to test</dt>
         <dd>
@@ -26,17 +39,20 @@
 </div>
 
 <div class="rule" id="/pagination/links" data-type="technical">
-    <p class="rulelab">Use Link headers for navigation</p>
+    <p class="rulelab">Use a <code>Link</code> header for navigation</p>
     <dl>
         <dt>Statement</dt>
         <dd>
-            <p>A paginated response MUST include an HTTP <code>Link</code> header [[RFC8288]] for navigation to other result segments.</p>
-            <p>For page-number pagination, the <code>Link</code> header SHOULD contain <code>first</code>, <code>prev</code>, <code>next</code>, and <code>last</code>.</p>
-            <p>For cursor pagination, the <code>Link</code> header SHOULD contain <code>next</code> and MAY contain <code>prev</code>.</p>
+            <p>A paginated response MUST include an HTTP <code>Link</code> header [[RFC8288]] for navigation to other result segments according the following list:
+            <ul>
+                <li>Page-number pagination MUST use link relation types <code>first</code>, <code>prev</code>, <code>next</code>, and <code>last</code>
+                <li>Cursor pagination MUST use link relation types <code>next</code> and <code>prev</code>
+            </ul>
         </dd>
         <dt>Rationale</dt>
         <dd>
-            <p><code>Link</code> headers provide clients a convenient and consistent method of navigation.</p>
+            <p>A <code>Link</code> header provides clients a convenient and consistent method of navigation.
+            <p class="note">The link relation types are part of the <a href="https://www.iana.org/assignments/link-relations/link-relations.xhtml">Link Relations registry</a> maintained by IANA.
         </dd>
         <dt>How to test</dt>
         <dd>
@@ -45,41 +61,15 @@
 </div>
 
 <div class="rule" id="/pagination/sorting" data-type="functional">
-    <p class="rulelab">Apply consistent sorting</p>
+    <p class="rulelab">Use deterministic ordering in paginated responses</p>
     <dl>
         <dt>Statement</dt>
         <dd>
-            <p>Paginated results MUST be sorted in a consistent order.</p>
+            <p>Items in a paginated response MUST use deterministic ordering.
         </dd>
         <dt>Rationale</dt>
         <dd>
-            <p>If the order can change beyond the influence of the client, items are likely to be missed or appear multiple times while traversing pages.</p>
-        </dd>
-    </dl>
-</div>
-
-<div class="rule" id="/pagination/parameters" data-type="technical">
-    <p class="rulelab">Use the defined parameters depending on the pagination format</p>
-    <dl>
-        <dt>Statement</dt>
-        <dd>
-            <p>For page-number pagination, the endpoint MUST support:</p>
-            <ul>
-                <li><code>page</code>: requested page number (1-based)</li>
-                <li><code>pageSize</code>: maximum number of items to return per page</li>
-            </ul>
-            <p>For cursor pagination, the endpoint MUST support:</p>
-            <ul>
-                <li><code>cursor</code>: opaque pointer to current position in dataset</li>
-                <li><code>limit</code>: maximum number of items to return per page</li>
-            </ul>
-        </dd>
-        <dt>Rationale</dt>
-        <dd>
-            <p>These are commonly used paramater names. <code>pageSize</code> is a more clear name in relation to page-number pagination then <code>limit</code>, which is a common parameter used with cursor pagination.</p>
-        </dd>
-        <dt>How to test</dt>
-        <dd>
+            <p>If the order can change beyond the influence of the client, items are likely to be missed or appear multiple times while traversing pages.
         </dd>
     </dl>
 </div>
