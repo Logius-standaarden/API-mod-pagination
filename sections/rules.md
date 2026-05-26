@@ -1,10 +1,10 @@
-<h2>Design rules</h2>
+# Design rules
 
-<h3>Summary</h3>
+## Summary
 
 <div id="design-rule-summary"></div>
 
-<h3>Rules</h3>
+## Rules
 
 <div class="rule" id="/pagination/format" data-type="technical">
     <p class="rulelab">Use standard pagination format</p>
