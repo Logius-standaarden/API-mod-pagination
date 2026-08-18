@@ -45,7 +45,7 @@
         <dd>
             <p>A paginated response MUST include an HTTP <code>Link</code> header [[RFC8288]] for navigation to other result segments according the following list:
             <ul>
-                <li>Page-number pagination MUST use link relation types <code>first</code>, <code>prev</code>, <code>next</code>, and <code>last</code>
+                <li>Page-number pagination MUST use link relation types <code>first</code>, <code>prev</code>, <code>next</code>, and <code>last</code>, where applicable.
                 <li>Cursor pagination MUST use link relation types <code>next</code> and <code>prev</code>
             </ul>
         </dd>
