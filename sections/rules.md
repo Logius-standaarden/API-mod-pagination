@@ -38,6 +38,24 @@
     </dl>
 </div>
 
+<div class="rule" id="/pagination/limits" data-type="technical">
+    <p class="rulelab">Document the page size limits</p>
+    <dl>
+        <dt>Statement</dt>
+        <dd>
+            <p>The OpenAPI definition document MUST include a default value for the returned page size (<code>pageSize</code> or <code>limit</code>).
+            <p>The document SHOULD also include a maximum value. A requested value larger than the maximum MUST result in HTTP status code <code>400</code> (Bad Request).
+        </dd>
+        <dt>Rationale</dt>
+        <dd>
+            <p>
+        </dd>
+        <dt>How to test</dt>
+        <dd>
+        </dd>
+    </dl>
+</div>
+
 <div class="rule" id="/pagination/links" data-type="technical">
     <p class="rulelab">Use a <code>Link</code> header for navigation</p>
     <dl>
