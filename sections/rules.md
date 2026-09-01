@@ -45,14 +45,16 @@
         <dd>
             <p>A paginated response MUST include an HTTP <code>Link</code> header [[RFC8288]] for navigation to other result segments according the following list:
             <ul>
-                <li>Page-number pagination MUST use link relation types <code>first</code>, <code>prev</code>, <code>next</code>, and <code>last</code>, where applicable.
-                <li>Cursor pagination MUST use link relation types <code>next</code> and <code>prev</code>
+                <li>Page-number pagination MUST use link relation types <code>first</code>, <code>prev</code>, <code>next</code>, and <code>last</code>.
+                <li>Cursor pagination MUST use link relation types <code>prev</code> and <code>next</code>.
             </ul>
+            <p>A link relation that has no result (e.g. <code>prev</code> on the first page), MUST be omitted.
         </dd>
         <dt>Rationale</dt>
         <dd>
             <p>A <code>Link</code> header provides clients a convenient and consistent method of navigation.
             <p class="note">The link relation types are part of the <a href="https://www.iana.org/assignments/link-relations/link-relations.xhtml">Link Relations registry</a> maintained by IANA.
+            <p>An absent link relation allows the client to recognise the limits of the collection, without having to resolve a value without a target.
         </dd>
         <dt>How to test</dt>
         <dd>
