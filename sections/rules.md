@@ -45,10 +45,21 @@
         <dd>
             <p>The OpenAPI definition document MUST include a default value for the returned page size (<code>pageSize</code> or <code>limit</code>).
             <p>The document SHOULD also include a maximum value. A requested value larger than the maximum MUST result in HTTP status code <code>400</code> (Bad Request).
+            <aside class="example" title="Page size limits in OAS">
+      <pre class="json">{
+  "name": "pageSize",
+  "in": "query",
+  "schema": {
+    "type": "integer",
+    "default": 20,
+    "maximum": 100
+  }
+}</pre>
+   </aside>
         </dd>
         <dt>Rationale</dt>
         <dd>
-            <p>By documenting a default, the client can rely on that limit without having to request one or infer it from the presense of a link to another page.
+            <p>By documenting a default, the client can rely on that limit without having to request one or infer it from the presence of a link to another page.
             <p>By documenting a maximum, the client can avoid sending an unreasonable request.
         </dd>
         <dt>How to test</dt>
