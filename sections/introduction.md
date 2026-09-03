@@ -4,7 +4,7 @@ This document is a module as part of the [[[ADR]]].
 
 Resource collections can be unreasonably large for a single response.
 With pagination, a segment of the resources can be returned while providing a method to retrieve other segments (or "pages").
-This module provides design rules which attempt to strike a balance between enhanced predictability for clients and flexibity to suit different data collection types.
+This module provides design rules which attempt to strike a balance between enhanced predictability for clients and flexility to suit different data collection types.
 
 A distinction between two categories of collections is used throughout this module: static and dynamic.
 
@@ -12,9 +12,9 @@ A distinction between two categories of collections is used throughout this modu
 
 Static collections are stable or at least unlikely to change while a client is retrieving segments of the resources.
 Page-number pagination would suffice for these collections.
-If no mutation occured between retrieving pages, sequential pages will have no gaps or overlap, e.g. if item no. 100 is the last of a page, item no. 101 will be the first item on the next page.
+If no mutation occurred between retrieving pages, sequential pages will have no gaps or overlap, e.g. if item _n_ is the last of a page, item _n+1_ will be the first item on the next page.
 
-If a resource collection is not completely static, no pagination method is reliable for synchonisation.
+If a resource collection is not completely static, no pagination method is reliable for synchronisation.
 
 ## Dynamic collections
 
