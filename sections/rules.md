@@ -73,18 +73,18 @@
     <dl>
         <dt>Statement</dt>
         <dd>
-            <p>A paginated response MUST include an HTTP <code>Link</code> header [[RFC8288]] for navigation to other result segments according the following list:
+            <p>A paginated response MUST include an HTTP <code>Link</code> header [[RFC8288]] for navigation to other result segments according to the following list:
             <ul>
                 <li>Page-number pagination MUST use link relation types <code>first</code>, <code>prev</code>, and <code>next</code>, and MAY use <code>last</code>.
                 <li>Cursor pagination MUST use link relation type <code>next</code> and MAY use <code>prev</code>.
             </ul>
-            <p>A link relation that has no result (e.g. <code>prev</code> on the first page), MUST be omitted.
+            <p>A link relation that has no result (e.g. <code>prev</code> on the first page) MUST be omitted.
             <p class="note">The link relation types are part of the <a href="https://www.iana.org/assignments/link-relations/link-relations.xhtml">Link Relations registry</a> maintained by IANA.
         </dd>
         <dt>Rationale</dt>
         <dd>
-            <p>A <code>Link</code> header provides clients a convenient and consistent method of navigation.
-            <p>The link relation type <code>last</code> is optional, for determining it requires counting the collection, which can be a costly endeavour.
+            <p>A <code>Link</code> header provides clients with a convenient and consistent method of navigation.
+            <p>The link relation type <code>last</code> is optional, as determining it requires counting the collection, which can be a costly endeavour.
             <p>Dynamic collections, like feeds, can experience mutations at the head. These can cause inconsistency with page alignment when reached with <code>prev</code>. Therefore, the backwards link is merely optional for cursor pagination.
             <p>An absent link relation allows the client to recognise the limits of the collection, without having to resolve a value without a target.
         </dd>
