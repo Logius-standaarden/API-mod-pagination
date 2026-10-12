@@ -5,9 +5,9 @@ loadRespecWithConfiguration({
   pubDomain: "api",
   shortName: "mod-pagination",
   specType: "HR",
-  specStatus: "WV",
-  publishDate: "2026-06-01",
-  publishVersion: "0.0.0",
+  specStatus: "CV",
+  publishDate: "2026-11-05",
+  publishVersion: "1.0.0",
   previousPublishVersion: [],
   editors: [{
     name: "Logius Standaarden",
