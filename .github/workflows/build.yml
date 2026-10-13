@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Build
-    uses: Logius-standaarden/Automatisering/.github/workflows/build.yml@consultatie-branch-namen
+    uses: Logius-standaarden/Automatisering/.github/workflows/build.yml@main
   check:
     needs: build
     name: Check
