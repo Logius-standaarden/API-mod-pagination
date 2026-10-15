@@ -1,11 +1,18 @@
-# API Design Rules Module: Pagination
+<h1 align="center">API Design Rules Module: Pagination</h1>
 
-Dit document is onderdeel van _NLgov REST API Design Rules_.
+<p align="center">
+  <em>Lijst van additionele afspraken voor de API Design Rules voor het gebruik van pagination.</em>
+</p>
 
-- NLgov REST API Design Rules (ADR)
-  - [Formele standaard](https://forumstandaardisatie.nl/open-standaarden/rest-api-design-rules)
-  - [Gepubliceerde versie](https://gitdocumentatie.logius.nl/publicatie/api/adr/)
-  - [Werkversie](https://logius-standaarden.github.io/API-Design-Rules/)
-  - [Repository](https://github.com/Logius-standaarden/API-Design-Rules)
+<p align="center">
+  <a href="https://logius-standaarden.github.io/API-mod-pagination/"><b>Werkversie</b></a> &nbsp;·&nbsp;
+  <a href="https://github.com/Logius-standaarden/API-mod-pagination/issues/new/choose"><b>Issue indienen</b></a> &nbsp;·&nbsp;
+  <a href="https://gitdocumentatie.logius.nl/publicatie/api/beheermodel/"><b>Beheermodel</b></a>
+</p>
 
-Het **Beheermodel** voor deze standaard is gepubliceerd op: <https://gitdocumentatie.logius.nl/publicatie/api/beheermodel/>
+---
+
+## Over deze standaard
+
+NLgov REST API Design Rules is een lijst afspraken die ontwikkelaars volgen tijdens het bouwen van een REST-API voor de publieke sector.
+Deze module bevat aanvullende afspraken hoe pagination moet worden ondersteund in API's.
