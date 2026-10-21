@@ -8,6 +8,8 @@ loadRespecWithConfiguration({
   specStatus: "WV",
   publishDate: "2026-06-01",
   publishVersion: "0.0.0",
+  // TODO: Verwijder voordat de release plaats vindt
+  latestVersion: "https://logius-standaarden.github.io/API-mod-pagination/",
   previousPublishVersion: [],
   editors: [{
     name: "Logius Standaarden",
