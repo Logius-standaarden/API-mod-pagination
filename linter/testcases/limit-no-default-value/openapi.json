@@ -50,6 +50,14 @@
                     },
                     {
                         "name": "pageSize",
+                        "in": "query"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "name": "pageSize",
                         "in": "query",
                         "schema": {
                             "default": 20

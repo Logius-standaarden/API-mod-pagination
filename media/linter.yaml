@@ -3,6 +3,15 @@ formats:
 
 rules:
   #/pagination/limits
+  nlgov:pagination:limit:schema:missing:
+    severity: error
+    given: $.paths[*][*].parameters[?(@.in == 'query' && (@.name == 'pageSize' || @.name == 'limit'))]
+    then:
+      - field: "schema"
+        function: truthy
+    message: "Any query parameter that represents a page size must have a schema defined"
+
+  #/pagination/limits
   nlgov:pagination:limit:default:
     severity: error
     given: $.paths[*][*].parameters[?(@.in == 'query' && (@.name == 'pageSize' || @.name == 'limit'))].schema

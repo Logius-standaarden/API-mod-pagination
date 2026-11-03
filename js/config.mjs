@@ -1,4 +1,4 @@
-import { processRuleBlocks } from "https://logius-standaarden.github.io/publicatie/respec/plugins/adr.mjs";
+import { processRuleBlocks, initializeHighlightJSYaml, fetchLinterConfiguration, highlightLinterCode } from "https://logius-standaarden.github.io/publicatie/respec/plugins/adr.mjs";
 import { loadRespecWithConfiguration } from "https://logius-standaarden.github.io/publicatie/respec/organisation-config.mjs";
 
 loadRespecWithConfiguration({
@@ -20,5 +20,12 @@ loadRespecWithConfiguration({
     companyURL: "https://www.logius.nl",
   },],
   github: "https://github.com/Logius-standaarden/API-mod-pagination",
-  postProcess: [processRuleBlocks],
+  preProcess: [
+    initializeHighlightJSYaml,
+    fetchLinterConfiguration,
+  ],
+  postProcess: [
+    highlightLinterCode,
+    processRuleBlocks,
+  ],
 });
