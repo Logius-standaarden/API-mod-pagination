@@ -9,13 +9,20 @@ loadRespecWithConfiguration({
   publishDate: "2026-06-01",
   publishVersion: "0.0.0",
   previousPublishVersion: [],
-  editors: [{
-    name: "Logius Standaarden",
-    company: "Logius",
-    companyURL: "https://www.logius.nl",
-  },],
+  editors: [
+      {
+        "company" : "Logius",
+        "companyURL" : "https://www.logius.nl",
+        "name" : "Alexander Green"
+      },
+      {
+        "company" : "Logius",
+        "companyURL" : "https://www.logius.nl",
+        "name" : "Tim van der Lippe"
+      }
+    ],
   authors: [{
-    name: "Logius Standaarden",
+    name: "Alexander Green",
     company: "Logius",
     companyURL: "https://www.logius.nl",
   },],
